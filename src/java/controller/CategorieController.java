@@ -139,7 +139,9 @@ public class CategorieController implements Serializable {
             if (value == null || value.length() == 0) {
                 return null;
             }
-            CategorieController controller = (CategorieController) facesContext.getApplication().getELResolver().
+            CategorieController controller = (CategorieController) facesContext
+                    .getApplication()
+                    .getELResolver().
                     getValue(facesContext.getELContext(), null, "categorieController");
             return controller.getCategorie(getKey(value));
         }

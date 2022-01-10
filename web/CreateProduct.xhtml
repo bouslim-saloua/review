@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <p:panelGrid columns="2">
+                    
+                    <p:outputLabel value="Reference:" for="reference" />
+                    <p:inputText id="reference" value="#{produitController.selected.reference}" title="Reference" />
+                    <p:outputLabel value="Titre:" for="titre" />
+                    <p:inputText id="titre" value="#{produitController.selected.titre}" title="Titre" />
+                    <p:outputLabel value="Weight:" for="weight" />
+                    <p:inputText id="weight" value="#{produitController.selected.weight}" title="Weight" />
+                    <p:outputLabel value="Url:" for="url" />
+                    <p:inputText id="url" value="#{produitController.selected.url}" title="Url" />
+                    <p:outputLabel value="Description:" for="description" />
+                    <p:inputText id="description" value="#{produitController.selected.description}" title="Description" />
+                    <p:outputLabel value="Color:" for="color" />
+                    <p:inputText id="color" value="#{produitController.selected.color}" title="Color" />
+                    <p:outputLabel value="Price:" for="price" />
+                    <p:inputText id="price" value="#{produitController.selected.price}" title="Price" />
+                    
+                    <p:outputLabel value="AuthorName:" for="authorName" />
+                    <p:inputText id="authorName" value="#{produitController.selected.authorName}" title="AuthorName" />
+                    <p:outputLabel value="Publisher:" for="publisher" />
+                    <p:inputText id="publisher" value="#{produitController.selected.publisher}" title="Publisher" />
+                    
+                    <p:outputLabel value="Categorie:" for="categorie" />
+                    <p:inputText id="categorie" value="#{produitController.selected.categorie}" title="Categorie" />
+                    <p:commandButton action="#{produitController.create()}" value="Créer"></p:commandButton>
+                </p:panelGrid>
+            </h:form>
+
+    </h:body>
+</html>
+

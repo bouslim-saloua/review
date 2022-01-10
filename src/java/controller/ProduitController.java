@@ -37,7 +37,7 @@ public class ProduitController implements Serializable {
     }
     
     @EJB
-    private service.ProduitFacade ejbFacade;
+    private ProduitFacade ejbFacade;
     private List<Produit> items = null;
     private Produit selected;
 
@@ -71,11 +71,13 @@ public class ProduitController implements Serializable {
         return selected;
     }
 
-    public void create() {
-        persist(PersistAction.CREATE, ResourceBundle.getBundle("/Bundle").getString("ProduitCreated"));
-        if (!JsfUtil.isValidationFailed()) {
-            items = null;    // Invalidate list of items to trigger re-query.
+    public String create() {
+        if(selected==null){
+            prepareCreate();
         }
+        ejbFacade.create(selected);
+        selected = new Produit();
+        return "ListProduct";
     }
 
     public void update() {
